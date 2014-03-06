@@ -15,7 +15,7 @@ def convert(file):
         frame_rate = 5
     else:
         frame_rate = frame_count/duration
-    cmd("ffmpeg -v quiet -r " + str(frame_rate) + " -i  " + file + " -y -an " + base_name + ".mp4")
+    cmd("ffmpeg -v quiet -r " + str(frame_rate) + " -i  " + file + " -crf 20 -tune film -preset veryslow -y -an " + base_name + ".mp4")
 
 def cmd(cmd):
     os.system(cmd)
